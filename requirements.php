@@ -18,7 +18,7 @@
 if (!isset($frameworkPath)) {
     $searchPaths = array(
         dirname(__FILE__) . '/vendor/yiisoft/yii2',
-        dirname(__FILE__) . '/../vendor/yiisoft/yii2',
+        dirname(__FILE__) . '/../../vendor/yiisoft/yii2',
     );
     foreach ($searchPaths as $path) {
         if (is_dir($path)) {
@@ -27,13 +27,11 @@ if (!isset($frameworkPath)) {
         }
     }
 }
-
 if (!isset($frameworkPath) || !is_dir($frameworkPath)) {
     $message = "<h1>Error</h1>\n\n"
         . "<p><strong>The path to yii framework seems to be incorrect.</strong></p>\n"
         . '<p>You need to install Yii framework via composer or adjust the framework path in file <abbr title="' . __FILE__ . '">' . basename(__FILE__) . "</abbr>.</p>\n"
-        . '<p>Please refer to the <abbr title="' . dirname(__FILE__) . "/README.md\">README</abbr> on how to install Yii.</p>\n";
-
+        . '<p>Please refer to the <abbr title="' . dirname(dirname(dirname(__FILE__))) . "/README.md\">README</abbr> on how to install Yii.</p>\n";
     if (!empty($_SERVER['argv'])) {
         // do not print HTML when used in console mode
         echo strip_tags($message);
@@ -108,6 +106,12 @@ $requirements = array(
         'by' => '<a href="http://www.yiiframework.com/doc-2.0/yii-caching-memcache.html">MemCache</a>',
         'memo' => extension_loaded('memcached') ? 'To use memcached set <a href="http://www.yiiframework.com/doc-2.0/yii-caching-memcache.html#$useMemcached-detail">MemCache::useMemcached</a> to <code>true</code>.' : ''
     ),
+    array(
+        'name' => 'APC extension',
+        'mandatory' => false,
+        'condition' => extension_loaded('apc'),
+        'by' => '<a href="http://www.yiiframework.com/doc-2.0/yii-caching-apccache.html">ApcCache</a>',
+    ),
     // CAPTCHA:
     array(
         'name' => 'GD PHP extension with FreeType support',
@@ -147,16 +151,7 @@ $requirements = array(
     ),
 );
 
-// OPcache check
-if (!version_compare(phpversion(), '5.5', '>=')) {
-    $requirements[] = array(
-        'name' => 'APC extension',
-        'mandatory' => false,
-        'condition' => extension_loaded('apc'),
-        'by' => '<a href="http://www.yiiframework.com/doc-2.0/yii-caching-apccache.html">ApcCache</a>',
-    );
-}
-
 $result = $requirementsChecker->checkYii()->check($requirements)->getResult();
 $requirementsChecker->render();
+
 exit($result['summary']['errors'] === 0 ? 0 : 1);
