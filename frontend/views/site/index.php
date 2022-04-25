@@ -1,23 +1,13 @@
 <?php
 
 /** @var yii\web\View $this */
-
-use yii\db\Query;
-
-$this->title = 'My Yii Application';
-
-$skills = (new Query())
-    ->select(['id', 'name'])
-    ->from('skills')
-    ->all();
-
 ?>
 <div class="site-index">
 
     <div class="jumbotron text-center bg-transparent">
         <h1 class="display-4">Congratulations!</h1>
 
-        <p class="lead">You have successfully created your views Yii-powered application.</p>
+        <p class="lead">You have successfully created your frontend Yii-powered application.</p>
 
         <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
     </div>
@@ -27,14 +17,6 @@ $skills = (new Query())
         <div class="row">
             <div class="col-lg-4">
                 <h2>Heading</h2>
-
-
-                <p><?php
-                    echo "Skill list: \n";
-                    echo $skills;
-                    ?>
-                </p>
-
 
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
                     dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
