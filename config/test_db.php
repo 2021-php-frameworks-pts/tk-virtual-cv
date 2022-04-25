@@ -1,6 +1,8 @@
 <?php
+$config = parse_ini_file( $_SERVER['DOCUMENT_ROOT'] . 'credentials.ini', true);
+
 $db = require __DIR__ . '/db.php';
 // test database! Important not to run tests on production or development databases
-$db['dsn'] = 'mysql:host=localhost;dbname=yii2basic_test';
+$db['dsn'] = $config['db']['dsn'];
 
 return $db;
