@@ -1,0 +1,97 @@
+2022-04-26 08:13:10 [127.0.0.1][-][ah16gaoqt7fu402mknn4dgf6rp][error][yii\base\InvalidConfigException] yii\base\InvalidConfigException: Connection::dsn cannot be empty. in /Users/tkadziolka/PhpstormProjects/virtual-cv/vendor/yiisoft/yii2/db/Connection.php:622
+Stack trace:
+#0 /Users/tkadziolka/PhpstormProjects/virtual-cv/vendor/yiisoft/yii2/db/Connection.php(1066): yii\db\Connection->open()
+#1 /Users/tkadziolka/PhpstormProjects/virtual-cv/vendor/yiisoft/yii2/db/Connection.php(1053): yii\db\Connection->getMasterPdo()
+#2 /Users/tkadziolka/PhpstormProjects/virtual-cv/vendor/yiisoft/yii2/db/Connection.php(1015): yii\db\Connection->getSlavePdo()
+#3 /Users/tkadziolka/PhpstormProjects/virtual-cv/vendor/yiisoft/yii2/db/Connection.php(863): yii\db\Connection->getDriverName()
+#4 /Users/tkadziolka/PhpstormProjects/virtual-cv/vendor/yiisoft/yii2/db/Connection.php(883): yii\db\Connection->getSchema()
+#5 /Users/tkadziolka/PhpstormProjects/virtual-cv/vendor/yiisoft/yii2/db/Query.php(157): yii\db\Connection->getQueryBuilder()
+#6 /Users/tkadziolka/PhpstormProjects/virtual-cv/vendor/yiisoft/yii2/db/Query.php(249): yii\db\Query->createCommand(Object(yii\db\Connection))
+#7 /Users/tkadziolka/PhpstormProjects/virtual-cv/views/site/index.php(12): yii\db\Query->all()
+#8 /Users/tkadziolka/PhpstormProjects/virtual-cv/vendor/yiisoft/yii2/base/View.php(347): require('/Users/tkadziol...')
+#9 /Users/tkadziolka/PhpstormProjects/virtual-cv/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/Users/tkadziol...', Array)
+#10 /Users/tkadziolka/PhpstormProjects/virtual-cv/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/Users/tkadziol...', Array, Object(app\controllers\SiteController))
+#11 /Users/tkadziolka/PhpstormProjects/virtual-cv/vendor/yiisoft/yii2/base/Controller.php(407): yii\base\View->render('index', Array, Object(app\controllers\SiteController))
+#12 /Users/tkadziolka/PhpstormProjects/virtual-cv/controllers/SiteController.php(64): yii\base\Controller->render('index')
+#13 [internal function]: app\controllers\SiteController->actionIndex()
+#14 /Users/tkadziolka/PhpstormProjects/virtual-cv/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#15 /Users/tkadziolka/PhpstormProjects/virtual-cv/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#16 /Users/tkadziolka/PhpstormProjects/virtual-cv/vendor/yiisoft/yii2/base/Module.php(552): yii\base\Controller->runAction('', Array)
+#17 /Users/tkadziolka/PhpstormProjects/virtual-cv/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('', Array)
+#18 /Users/tkadziolka/PhpstormProjects/virtual-cv/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#19 /Users/tkadziolka/PhpstormProjects/virtual-cv/web/index.php(12): yii\base\Application->run()
+#20 {main}
+2022-04-26 08:13:10 [127.0.0.1][-][ah16gaoqt7fu402mknn4dgf6rp][info][application] $_GET = [
+    '_ijt' => '3qa82ricsmng34ma8619sj06av'
+    '_ij_reload' => 'RELOAD_ON_SAVE'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'Phpstorm-8e0e24cd' => '36d2e045-9f11-442a-b2ca-fdf999438f59'
+    'PHPSESSID' => 'ah16gaoqt7fu402mknn4dgf6rp'
+    '_csrf' => 'f67141767af2ebcdc18823c49d45a9c46f9052e40eaaf76d9abf5863aa18262fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"5G8dsVX5WXQUx17WGTQVGgojvfl7ACZW\";}'
+    'advanced-frontend' => 'skogdsd0608pu3f078j3tg6d2l'
+    '_csrf-frontend' => '943d338bb0bec72f9ca8862b562532c76be259a1aa14436daa2c861759ecf8f0a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"nGCkQmRd_C_3hEmUvZ5bbQqkP7pnupGp\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'PATH' => '/Users/tkadziolka/development/flutter/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands'
+    '__CFBundleIdentifier' => 'com.jetbrains.PhpStorm'
+    'SHELL' => '/bin/bash'
+    'USER' => 'tkadziolka'
+    'TMPDIR' => '/var/folders/5j/m760ckq55xzckknd2jcfds580000gn/T/'
+    'COMMAND_MODE' => 'unix2003'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.hRny1DTO7R/Listeners'
+    'XPC_FLAGS' => '0x0'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x1D:0x2A'
+    'LOGNAME' => 'tkadziolka'
+    'LC_CTYPE' => 'pl_PL.UTF-8'
+    'XPC_SERVICE_NAME' => 'application.com.jetbrains.PhpStorm.12891415654.12891416393'
+    'PWD' => '/Users/tkadziolka/PhpstormProjects/virtual-cv'
+    'HOME' => '/Users/tkadziolka'
+    'SCRIPT_NAME' => '/virtual-cv/web/index.php'
+    'SCRIPT_FILENAME' => '/Users/tkadziolka/PhpstormProjects/virtual-cv/web/index.php'
+    'DOCUMENT_ROOT' => '/Users/tkadziolka/PhpstormProjects/virtual-cv'
+    'HTTP_CONTENT_LENGTH' => '0'
+    'HTTP_COOKIE' => 'Phpstorm-8e0e24cd=36d2e045-9f11-442a-b2ca-fdf999438f59; PHPSESSID=ah16gaoqt7fu402mknn4dgf6rp; _csrf=f67141767af2ebcdc18823c49d45a9c46f9052e40eaaf76d9abf5863aa18262fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%225G8dsVX5WXQUx17WGTQVGgojvfl7ACZW%22%3B%7D; advanced-frontend=skogdsd0608pu3f078j3tg6d2l; _csrf-frontend=943d338bb0bec72f9ca8862b562532c76be259a1aa14436daa2c861759ecf8f0a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22nGCkQmRd_C_3hEmUvZ5bbQqkP7pnupGp%22%3B%7D'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 11_3_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_HOST' => 'localhost:63342'
+    'CONTENT_TYPE' => ''
+    'CONTENT_LENGTH' => '0'
+    'QUERY_STRING' => '_ijt=3qa82ricsmng34ma8619sj06av&_ij_reload=RELOAD_ON_SAVE'
+    'DOCUMENT_URI' => '/virtual-cv/web/index.php'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PORT' => '63342'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'PhpStorm 2021.3'
+    'REMOTE_PORT' => '54196'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'REQUEST_METHOD' => 'GET'
+    'REQUEST_URI' => '/virtual-cv/web/index.php?_ijt=3qa82ricsmng34ma8619sj06av&_ij_reload=RELOAD_ON_SAVE'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/virtual-cv/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1650960790.3665
+    'REQUEST_TIME' => 1650960790
+    'argv' => [
+        0 => '_ijt=3qa82ricsmng34ma8619sj06av&_ij_reload=RELOAD_ON_SAVE'
+    ]
+    'argc' => 1
+]
