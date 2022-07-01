@@ -19,9 +19,9 @@ class Yii {
 }
 
 /**
- * @property yii\rbac\DbManager $authManager 
+ * @property yii\rbac\DbManager $authManager
  * @property \yii\web\User|__WebUser $user
- * 
+ *
  */
 class __Application {
 }
@@ -30,4 +30,11 @@ class __Application {
  * @property app\models\User $identity
  */
 class __WebUser {
+}
+
+
+/**
+ * @var yii\db\Query
+ */
+class __Query{
 }

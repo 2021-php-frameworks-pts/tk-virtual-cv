@@ -88,3 +88,33 @@ a.desc:after {
 .nav > li > form > button.logout:focus {
     outline: none;
 }
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    padding: 8px;
+}
+
+.skill-table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: center;
+}
+
+/* Left column */
+td:nth-child(odd) {
+    text-align: center;
+    min-width: 150px;
+}
+
+/* Right column */
+td:nth-child(even) {
+    width: 100%;
+}
+
+th, td {
+    padding: 10px;
+}
