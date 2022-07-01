@@ -2,64 +2,45 @@
 
 /** @var yii\web\View $this */
 
-use yii\db\Connection;
 use yii\db\Query;
 
-$skills = (new Query()) // Array with arrays
-    ->select(['id'])
+$skills = (new Query())
+    ->select(['id', 'name', 'proficiency'])
     ->from('skills')
+    ->orderBy(['proficiency' => SORT_DESC])
     ->all();
 ?>
 <div class="site-index">
 
     <div class="jumbotron text-center bg-transparent">
-        <h1 class="display-4">Congratulations!</h1>
-
-        <p class="lead">You have successfully created your frontend Yii-powered application.</p>
-
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
+        <h1 class="display-4">List of my skills</h1>
+        <p class="lead">Here you can find all languages and frameworks that I worked with.</p>
     </div>
 
     <div class="body-content">
-
         <div class="row">
-            <div class="col-lg-4">
-                <h2>Heading</h2>
+            <div class="col-lg-12">
+                <h2>Skills</h2>
+                <p>
+                    <?php
+                    echo '<table class="skill-table card">';
+                    echo '<th>' . 'Name' . '</th>';
+                    echo '<th>' . 'Proficiency' . '</th>';
 
-<!--               TODO Print beautiful list of skills -->
-                <p><?php
-                    $skillsId = reset($skills);
-                    echo "Skill list: \n";
-                    echo implode("|\n", $skillsId);
+                    $skillRows = reset($skills);
+                    foreach ($skills as $skill) {
+                        echo '<tr>';
+                            echo '<td>' . ($skill['name']) . '</td>';
+                            echo '<td>';
+                                echo '<div class="progress">';
+                                    echo '<div class="progress-bar" role="progressbar" style="width:' . ($skill['proficiency'] * 100) . '%" aria-valuenow="' . ($skill['proficiency'] * 100) . '" aria-valuemin="0" aria-valuemax="100"></div>';
+                                echo '</div>';
+                            echo '</td>';
+                        echo '</tr>';
+                    }
+                    echo '</table>';
                     ?>
                 </p>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-outline-secondary" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-outline-secondary" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-outline-secondary" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
             </div>
         </div>
 
